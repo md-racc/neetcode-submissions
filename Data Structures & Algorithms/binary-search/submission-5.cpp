@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+        int i{0};
+        int j{static_cast<int>(nums.size())-1};
+        while (i <= j){
+            int mid = (j-i)/2 + i;
+            if (nums[mid] == target) return mid;
+            else if (nums[mid] > target){
+                j = mid - 1;
+            } else {
+                i = mid + 1;
+            }
+        }
+        return -1;
+    }
+};
